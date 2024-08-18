@@ -3,7 +3,7 @@
              x:Class="Calculator_App.App"
              xmlns:local="using:Calculator_App"
              xmlns:themes="clr-namespace:Avalonia.Themes.Neumorphism;assembly=Avalonia.Themes.Neumorphism"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Light">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
