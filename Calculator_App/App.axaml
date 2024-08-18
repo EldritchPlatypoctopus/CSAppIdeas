@@ -11,6 +11,6 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <themes:NeumorphismTheme BaseTheme="Light" PrimaryColor="Indigo" SecondaryColor="Orange" />
+        <themes:NeumorphismTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Orange" />
     </Application.Styles>
 </Application>

@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:neucontrols="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Calculator_App.Views.IntegerCalculator">
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Setter Property="CornerRadius" Value="40"></Setter>
+        </Style>
+    </UserControl.Styles>
+    <neucontrols:Card Grid.Row="2">
+        <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*, *, *, *">
+            <Button Grid.Row="0" Grid.Column="0" Classes="Dark">1</Button>
+            <Button Grid.Row="0" Grid.Column="1" Classes="Dark">2</Button>
+            <Button Grid.Row="0" Grid.Column="2" Classes="Dark">3</Button>
+            <Button Grid.Row="1" Grid.Column="0" Classes="Dark">4</Button>
+            <Button Grid.Row="1" Grid.Column="1" Classes="Dark">5</Button>
+            <Button Grid.Row="1" Grid.Column="2" Classes="Dark">6</Button>
+            <Button Grid.Row="2" Grid.Column="0" Classes="Dark">7</Button>
+            <Button Grid.Row="2" Grid.Column="1" Classes="Dark">8</Button>
+            <Button Grid.Row="2" Grid.Column="2" Classes="Dark">9</Button>
+            <Button Grid.Row="3" Grid.Column="0">←</Button>
+            <Button Grid.Row="3" Grid.Column="1" Classes="Dark">0</Button>
+            <Button Grid.Row="3" Grid.Column="2">+/-</Button>
+            
+            <Button Grid.Row="0" Grid.Column="3">AC</Button>
+            <Button Grid.Row="1" Grid.Column="3">C</Button>
+            <Button Grid.Row="2" Grid.Column="3" Grid.RowSpan="2">=</Button>
+            
+        </Grid>
+    </neucontrols:Card>
+</UserControl>

@@ -3,6 +3,7 @@
         xmlns:vm="using:Calculator_App.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="using:Calculator_App.Views"
         xmlns:neucontrols="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Calculator_App.Views.MainWindow"
@@ -13,11 +14,6 @@
         Height="900"
         MinWidth="900"
         Width="900">
-    <Window.Styles>
-        <Style Selector="Button">
-            <Setter Property="Margin" Value="0 20 "></Setter>
-        </Style>
-    </Window.Styles>
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -25,11 +21,18 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     
-    <Grid RowDefinitions="Auto, Auto, *">
+    <Grid RowDefinitions="Auto, Auto">
         <Menu Grid.Row="0">
-            <MenuItem Header="File">Exit</MenuItem>
+            <MenuItem Header="File" Command="{Binding Exit}">Exit</MenuItem>
         </Menu>
-        <TextBlock Grid.Row="1">Number goes here</TextBlock>
+        <neucontrols:Card Grid.Row="1" Theme="{StaticResource CardOutset}" CornerRadius="10">
+            <StackPanel Orientation="Vertical">
+                <neucontrols:Card Theme="{StaticResource CardInset}" CornerRadius="50">
+                    <TextBlock HorizontalAlignment="Right" Margin="50 10" Classes="Headline4 Subheadline" TextAlignment="Center" Text="{Binding ShownValue}" />
+                </neucontrols:Card>
+                <uc:IntegerCalculator Height="700"/>
+            </StackPanel>
+        </neucontrols:Card>
     </Grid>
 
 </Window>
