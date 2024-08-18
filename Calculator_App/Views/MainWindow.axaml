@@ -28,7 +28,7 @@
         <neucontrols:Card Grid.Row="1" Theme="{StaticResource CardOutset}" CornerRadius="10">
             <StackPanel Orientation="Vertical">
                 <neucontrols:Card Theme="{StaticResource CardInset}" CornerRadius="50">
-                    <TextBlock HorizontalAlignment="Right" Margin="50 10" Classes="Headline4 Subheadline" TextAlignment="Center" Text="{Binding ShownValue}" />
+                    <TextBlock HorizontalAlignment="Right" Margin="50 10" Classes="Headline4 Subheadline" TextAlignment="Center" Text="{Binding DisplayValue}" />
                 </neucontrols:Card>
                 <uc:IntegerCalculator Height="700"/>
             </StackPanel>

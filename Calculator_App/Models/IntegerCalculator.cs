@@ -1,19 +1,33 @@
 namespace Calculator_App.Models;
 
-public class IntegerCalculator: ICalculator<int>
+public class IntegerCalculator: ICalculator<double>
 {
-    public int Execute(Operator op, int operand)
+    private double _value = 0;
+    public double Execute(Operator op, double operand)
     {
-        throw new System.NotImplementedException();
+        switch (op)
+        {
+            case Operator.Add:
+                _value += operand;
+                break;
+            case Operator.Subtract:
+                _value -= operand;
+                break;
+            case Operator.Multiply:
+                _value *= operand;
+                break;
+            case Operator.Divide:
+                if (operand != 0)
+                {
+                    _value = (int)_value / operand;
+                }
+                break;
+        }
+        return _value;
     }
 
     public void Clear()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void ClearAll()
-    {
-        throw new System.NotImplementedException();
+        _value = 0;
     }
 }
