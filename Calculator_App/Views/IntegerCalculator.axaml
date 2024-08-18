@@ -5,6 +5,7 @@
              xmlns:neucontrols="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
              xmlns:s="clr-namespace:System;assembly=mscorlib"
              xmlns:vm="clr-namespace:Calculator_App.ViewModels"
+             xmlns:m="clr-namespace:Calculator_App.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Calculator_App.Views.IntegerCalculator"
              x:DataType="vm:MainWindowViewModel">
@@ -14,7 +15,7 @@
         </Style>
     </UserControl.Styles>
     <neucontrols:Card Grid.Row="2">
-        <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*, *, *, *">
+        <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*, *, *, *, *">
             <Button Grid.Row="0" Grid.Column="0" Classes="Dark" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>1</s:Int32>
@@ -69,19 +70,48 @@
                 </Button.CommandParameter>
                 9
             </Button>
-            <Button Grid.Row="3" Grid.Column="0">←</Button>
+            <Button Grid.Row="3" Grid.Column="0" Command="{Binding RemoveNumberCommand}">←</Button>
             <Button Grid.Row="3" Grid.Column="1" Classes="Dark" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>0</s:Int32>
                 </Button.CommandParameter>
                 0
             </Button>
-            <Button Grid.Row="3" Grid.Column="2">+/-</Button>
+            <Button Grid.Row="3" Grid.Column="2" Command="{Binding FlipSignCommand}">+/-</Button>
             
-            <Button Grid.Row="0" Grid.Column="3">AC</Button>
-            <Button Grid.Row="1" Grid.Column="3">C</Button>
-            <Button Grid.Row="2" Grid.Column="3" Grid.RowSpan="2">=</Button>
+            <Button Grid.Row="0" Grid.Column="3" Command="{Binding ClearCommand}">
+                <Button.CommandParameter>
+                    <s:Boolean>True</s:Boolean>
+                </Button.CommandParameter>
+                AC
+            </Button>
+            <Button Grid.Row="1" Grid.Column="3" Command="{Binding ClearCommand}">C</Button>
+            <Button Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" Command="{Binding CalculateCommand}">=</Button>
             
+            <Button Grid.Row="2" Grid.Column="3" Command="{Binding OperatorCommand}">
+                <Button.CommandParameter>
+                    <m:Operator>Add</m:Operator>
+                </Button.CommandParameter>
+                +
+            </Button>
+            <Button Grid.Row="2" Grid.Column="4" Command="{Binding OperatorCommand}">
+                <Button.CommandParameter>
+                    <m:Operator>Subtract</m:Operator>
+                </Button.CommandParameter>
+                -
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3" Command="{Binding OperatorCommand}">
+                <Button.CommandParameter>
+                    <m:Operator>Multiply</m:Operator>
+                </Button.CommandParameter>
+                *
+            </Button>
+            <Button Grid.Row="3" Grid.Column="4" Command="{Binding OperatorCommand}">
+                <Button.CommandParameter>
+                    <m:Operator>Divide</m:Operator>
+                </Button.CommandParameter>
+                /
+            </Button>
         </Grid>
     </neucontrols:Card>
 </UserControl>

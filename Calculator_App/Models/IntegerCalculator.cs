@@ -3,6 +3,13 @@ namespace Calculator_App.Models;
 public class IntegerCalculator: ICalculator<double>
 {
     private double _value = 0;
+
+    public double Value
+    {
+        get => _value;
+        set => _value = value;
+    }
+
     public double Execute(Operator op, double operand)
     {
         switch (op)
